@@ -1,0 +1,38 @@
+.register_wrapper{
+    background: white;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+.register_wrapper form{
+text-align: left;
+}
+.register_wrapper form input{
+    height: 30px;
+    padding: 3px 10px;
+
+}
+.register_wrapper form input:focus{
+    outline: none;
+}
+.register_wrapper div{
+    margin: 0px 30px 0px 30px;
+}
+.form_inner_content{
+    display: flex;
+}
+.register_wrapper form button{
+    margin-left: 60px;
+    margin-top: 25px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    width: 79%;
+    font-size: 17px;
+    margin: 20;
+    border: none;
+    color: white;
+    background: #4E95F5;
+    cursor: pointer;
+}

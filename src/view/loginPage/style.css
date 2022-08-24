@@ -1,0 +1,30 @@
+.login_wrapper{
+    background: white;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+.login_wrapper form{
+text-align: left;
+}
+.login_wrapper form input{
+    height: 30px;
+    padding: 3px 10px;
+
+}
+.login_wrapper form input:focus{
+    outline: none;
+}
+.login_wrapper form button{
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 17px;
+    border: none;
+    color: white;
+    background: #4E95F5;
+    cursor: pointer;
+}

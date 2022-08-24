@@ -1,0 +1,35 @@
+.layout_wrapper ul{
+        list-style: none;
+        display: flex;
+        
+}
+.layout_wrapper ul li{
+    margin: 10px;
+}
+.layout_wrapper{
+    background-color: #F0F0F0;
+    height: 100vh;
+}
+.nav_wrapper{
+    border-bottom: 1px solid #C3C3C3;
+    padding: 0px 30px;
+    display: flex;
+    background-color: white;
+    align-items: center;  
+}
+.header_wrapper{
+    display: flex;
+    margin-left: auto;
+}
+.header_wrapper p a{
+   text-decoration: none;
+}
+.nav_wrapper ul{
+    margin-left: auto;
+}
+.instruction{
+    background: white;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 5px;
+}
