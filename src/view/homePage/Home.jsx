@@ -7,6 +7,7 @@ import data from "@emoji-mart/data";
 import { SmileTwoTone } from "@ant-design/icons";
 import Picker from "@emoji-mart/react";
 import avtar from '../../assets/avatar.png'
+import empty_workspace from '../../assets/empty_workspace.svg'
 import './style.css'
 const Home = () => {
     const scroll = useRef();
@@ -69,7 +70,7 @@ const Home = () => {
             submitMessage()
         }
     }
-console.log(username)
+    console.log(username)
     return (
 
         <Layout>
@@ -77,17 +78,22 @@ console.log(username)
 
                 <div className='left_content'>
                     {user && user?.map(data => {
-                        return <>{data.firstName!==undefined?<p className={data.firstName === username ? 'user_active_status' : ''} onClick={() => initChat(data)}><img alt='avatar' src={avtar} />{data.firstName}</p>:''}</>
+                        return <>{data.firstName !== undefined ? <p className={data.firstName === username ? 'user_active_status' : ''} onClick={() => initChat(data)}><img alt='avatar' src={data.avtar?data.avtar:avtar} />{data.firstName}</p> : ''}</>
                     })}
                 </div>
                 <div className='right_content'>
+                {chatStart ? '': <div className='empty_workspace'>
+               <img  src={empty_workspace} />
+               <p>Please select any user to start conversation</p>
+               </div>}
+              
                     {chatStart ? <p className='User_name'>{username}</p> : ''}
                     <div className='chat_container'>
                         {chatStart ? userConversation && userConversation?.conversations.map(data => {
                             return <p className={data.user_uid_1 === auth.uid ? 'sent_messages' : 'messagebox'} >{data.messages}</p>
                         })
                             : null}
-                        <div style={{marginBottom:'70px'}} ref={scroll}></div>
+                        <div style={{ marginBottom: '70px' }} ref={scroll}></div>
                     </div>
 
                     {chatStart ? <div className='send_form'>

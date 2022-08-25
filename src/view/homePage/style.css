@@ -4,7 +4,7 @@
 .left_content{
     width: 350px;
     background-color: white;
-    height: 91.8vh;
+    height: 90vh;
     text-align: left;
 }
 .user_active_status{
@@ -21,6 +21,7 @@
 }
 .left_content p img{
     height: 30px;
+    width: 30px;
     margin-right: 5px;
 }
 .left_content p:hover{
@@ -36,7 +37,7 @@
 .sent_messages{
     border: 1px solid #00ccec!important;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     background: #F3FDFF;
     margin-left: auto;
     width: fit-content;
@@ -46,7 +47,7 @@
 .messagebox{
     border: 1px solid #e252ff!important;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     width: fit-content;
     text-align: left;
     background: white;
@@ -92,4 +93,14 @@ outline: none;
     position: absolute;
     top: -390px;
     right: 50px;
+}
+.empty_workspace{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty_workspace img{
+    position: fixed;
+    margin-top: 140px;
 }

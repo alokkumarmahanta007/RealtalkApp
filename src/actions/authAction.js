@@ -1,6 +1,6 @@
 
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, setDoc ,doc,updateDoc,serverTimestamp  } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { updateProfile, getAuth, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { db, auth } from "../firebase";
 import { getDatabase, ref, child, push, update } from "firebase/database";
@@ -30,7 +30,7 @@ export const signup = (user) => {
                             lastName: user.lastName,
                             uid: data.user.uid,
                             email: user.email,
-                            
+
                         }
                         localStorage.setItem('user', JSON.stringify(loggedInUser))
                         dispatch({
@@ -64,7 +64,7 @@ export const signin = (user) => {
                     lastName,
                     uid: data.user.uid,
                     email: data.user.email,
-                    createdAt:new Date()
+                    createdAt: new Date()
                 }
                 localStorage.setItem('user', JSON.stringify(loggedInUser))
                 dispatch({
@@ -118,7 +118,7 @@ export const logout = (uid) => {
 
         // Set the "capital" field of the city 'DC'
         await updateDoc(updateActiveStatus, {
-          isOnline:false
+            isOnline: false
         });
         signOut(auth)
             .then(() => {

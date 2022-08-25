@@ -19,6 +19,7 @@
 }
 .header_wrapper{
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
 .header_wrapper p a{
@@ -32,4 +33,33 @@
     padding: 30px;
     margin: 30px;
     border-radius: 5px;
+}
+.drawer{
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    box-shadow: 0 0 2px;
+    transition: .5s;
+    z-index: 1;
+    width: 350px;
+    background-color: #E5E8E8;
+}
+.drawer .img_close{
+    cursor: pointer;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    padding: 10px;
+}
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    height: 30px;
+    margin-top: 5px;
+    cursor: pointer;
 }

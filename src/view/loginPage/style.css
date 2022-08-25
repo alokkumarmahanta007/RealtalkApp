@@ -28,3 +28,7 @@ text-align: left;
     background: #4E95F5;
     cursor: pointer;
 }
+.auth_error_text{
+    padding: 20px;
+    background: #FFC1B8;
+}

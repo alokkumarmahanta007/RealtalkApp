@@ -35,3 +35,11 @@ text-align: left;
     background: #4E95F5;
     cursor: pointer;
 }
+.error_message{
+    background-color: #FFC1B8;
+    text-align: center;
+    padding: 10px;
+    width: 75%;
+    border-radius: 5px;
+    margin-left: 60px;
+}

@@ -1,40 +1,40 @@
 import { userConstants } from "../actions/constants"
 
-const initState={
-    users:[],
-    conversations:[]
+const initState = {
+    users: [],
+    conversations: []
 }
 
-const userReducer=(state=initState,action)=>{
-switch(action.type){
-    case `${userConstants.GET_REALTIME_USERS}_REQUEST`:
-        break;
+const userReducer = (state = initState, action) => {
+    switch (action.type) {
+        case `${userConstants.GET_REALTIME_USERS}_REQUEST`:
+            break;
         case `${userConstants.GET_REALTIME_USERS}_SUCCESS`:
-            state={
+            state = {
                 ...state,
-                users:action.payload.users
+                users: action.payload.users
             }
-        break;
+            break;
         case `${userConstants.GET_REALTIME_USERS}_FAIL`:
-            state={
+            state = {
                 ...state,
-                error:'Request Failed'
+                error: 'Request Failed'
             }
-        break;
+            break;
         case `${userConstants.GET_REALTIME_MESSAGES}_SUCCESS`:
-            state={
+            state = {
                 ...state,
-                conversations:action.payload.conversation
+                conversations: action.payload.conversation
             }
             break
-            case `${userConstants.GET_REALTIME_MESSAGES}_FAIL`:
-                state={
-                    ...state,
-                    conversations:action.payload.conversation
-                }
-                break
+        case `${userConstants.GET_REALTIME_MESSAGES}_FAIL`:
+            state = {
+                ...state,
+                conversations: action.payload.conversation
+            }
+            break
 
-}
-return state
+    }
+    return state
 }
 export default userReducer
