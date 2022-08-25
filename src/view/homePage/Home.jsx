@@ -21,7 +21,6 @@ const Home = () => {
     const [toggle, setToggle] = useState(false);
 
     const getEmoji = (emojiData) => {
-        console.log(emojiData);
         setMessage(messages + emojiData?.native);
     };
     const dispatch = useDispatch()
@@ -55,13 +54,6 @@ const Home = () => {
         }
         setMessage('')
     }
-    console.log(userConversation)
-    const sortarray = userConversation && userConversation?.conversations.sort(function (a, b) {
-        // Turn your strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
-        return new Date(b.createdAt) - new Date(a.createdAt);
-    });
-    console.log(sortarray)
     const toggleEmojiContainer = () => {
         setToggle(!toggle);
     };
@@ -70,23 +62,22 @@ const Home = () => {
             submitMessage()
         }
     }
-    console.log(username)
     return (
 
         <Layout>
             {!auth.authenticated ? '' : <div className='home_main_wrapper'>
-
                 <div className='left_content'>
                     {user && user?.map(data => {
-                        return <>{data.firstName !== undefined ? <p className={data.firstName === username ? 'user_active_status' : ''} onClick={() => initChat(data)}><img alt='avatar' src={data.avtar?data.avtar:avtar} />{data.firstName}</p> : ''}</>
+                        return <>{data.firstName !== undefined ? <p className={data.firstName === username ? 'user_active_status' : ''} onClick={() => initChat(data)}><img alt='avatar' src={data.avtar ? data.avtar : avtar} />{data.firstName}</p> : ''}</>
                     })}
+
                 </div>
                 <div className='right_content'>
-                {chatStart ? '': <div className='empty_workspace'>
-               <img  src={empty_workspace} />
-               <p>Please select any user to start conversation</p>
-               </div>}
-              
+                    {chatStart ? '' : <div className='empty_workspace'>
+                        <img alt='empty data' src={empty_workspace} />
+                        <p>Please select any user to start conversation</p>
+                    </div>}
+
                     {chatStart ? <p className='User_name'>{username}</p> : ''}
                     <div className='chat_container'>
                         {chatStart ? userConversation && userConversation?.conversations.map(data => {

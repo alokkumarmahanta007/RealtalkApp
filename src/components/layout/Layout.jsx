@@ -15,9 +15,7 @@ export const Layout = (props) => {
   const [imgUrl,setImgUrl]=useState('')
   const [user,setUser]=useState('')
   const getParams = useLocation();
-  console.log(getParams.pathname)
   const auth = useSelector(state => state.auth)
-  console.log(auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [drawerStatus,setDrawerStatus]=useState(false)
@@ -54,14 +52,11 @@ try{
   })
   setImgUrl('')
 }catch(err){
-
 }
-
   }
   uploadImg()
 }
 },[auth.uid, imgUrl])
-  console.log(user)
   return (
     <div className='layout_wrapper'>
     {drawerStatus?<div className='drawer'>

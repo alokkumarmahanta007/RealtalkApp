@@ -4,8 +4,9 @@
 .left_content{
     width: 350px;
     background-color: white;
-    height: 90vh;
+    height: 90.5vh;
     text-align: left;
+    overflow: auto;
 }
 .user_active_status{
     background-color: #F1F1F1;
@@ -54,7 +55,7 @@
 }
 .send_form{
     display: flex;
-    bottom: 20px;
+    bottom: 30px;
     width: 90%;
     position: absolute;
 }.send_form input{
